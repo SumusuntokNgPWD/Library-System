@@ -9,7 +9,8 @@ import java.util.*;
 import java.util.List;
 
 public class Main extends JFrame {
-    private MasterNode master;
+	private static final long serialVersionUID = 1L;
+	private MasterNode master;
     private List<String> allTitles;
     private List<String> allAuthors;
     private List<String> allGenres;
@@ -317,7 +318,7 @@ public class Main extends JFrame {
 
         // distribute & preprocess
         master.distributeBooks(books);
-        master.printWorkerStats();
+       // master.printWorkerStats();
 
         // prepare autocomplete lists (global)
         List<String> allTitles = new ArrayList<>();

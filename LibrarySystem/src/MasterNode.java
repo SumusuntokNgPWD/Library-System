@@ -86,11 +86,15 @@ public class MasterNode {
 
         return result;
     }
+}
 
+
+/*
     // For debugging / info
     public void printWorkerStats() {
         for (WorkerNode w : workers) {
             System.out.println("Worker " + w.getNodeId() + ": books=" + w.getBookCount() + " cap=" + w.getCapacity());
         }
     }
-}
+    */
+
