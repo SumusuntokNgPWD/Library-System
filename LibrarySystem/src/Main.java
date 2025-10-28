@@ -305,7 +305,7 @@ public class Main extends JFrame {
             }
         });
         List<LibraryBook> books = holder[0];
-        System.out.println("Data retrieval took: " + retrievalTime + " ms. Loaded: " + books.size());
+        System.out.println("Data retrieval took: " + retrievalTime + " ms. Loaded: " + books.size() + " books");
 
         Map<Integer, LibraryBook> bookMap = new HashMap<>();
         for (LibraryBook b : books) bookMap.put(b.getId(), b);
