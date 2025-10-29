@@ -1,6 +1,10 @@
 import javax.swing.*;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
+
+import inheritance.ComboBox;
+import inheritance.SimpleButton;
+
 import java.awt.*;
 import java.awt.event.*;
 import java.sql.Connection;
@@ -20,7 +24,7 @@ public class Main extends JFrame {
     private JComponent inputComponent1;
     private JComponent inputComponent2;
     private JTextArea resultArea;
-    private JComboBox<String> searchTypeCombo;
+    private ComboBox<String> searchTypeCombo;
     private Map<Integer, LibraryBook> bookMap;
 
     public Main(MasterNode master, Map<Integer, LibraryBook> bookMap,
@@ -40,12 +44,12 @@ public class Main extends JFrame {
         getContentPane().setLayout(new BorderLayout());
 
         inputPanel = new JPanel(new FlowLayout(FlowLayout.LEFT, 10, 6));
-        searchTypeCombo = new JComboBox<>(new String[]{"Title", "Author", "Year", "Genre"});
+        searchTypeCombo = new ComboBox<>(new String[]{"Title", "Author", "Year", "Genre"});
         inputComponent1 = new JTextField(18);
         inputComponent2 = null;
         fromLabel = new JLabel("From:");
         toLabel = new JLabel("To:");
-        JButton searchButton = new JButton("Search");
+        SimpleButton searchButton = new SimpleButton("Search");
 
         inputPanel.add(new JLabel("Search by:"));
         inputPanel.add(searchTypeCombo);
@@ -56,6 +60,8 @@ public class Main extends JFrame {
 
         resultArea = new JTextArea();
         resultArea.setEditable(false);
+        Font boldFont = new Font("SansSerif", Font.BOLD, 14);
+        resultArea.setFont(boldFont);
         getContentPane().add(new JScrollPane(resultArea), BorderLayout.CENTER);
 
         searchTypeCombo.addActionListener(e -> switchInputComponent());
@@ -73,7 +79,7 @@ public class Main extends JFrame {
         inputPanel.removeAll();
 
         String type = (String) searchTypeCombo.getSelectedItem();
-        JButton searchButton = new JButton("Search");
+        SimpleButton searchButton = new SimpleButton("Search");
         searchButton.addActionListener(e -> performSearch());
 
         inputPanel.add(new JLabel("Search by:"));

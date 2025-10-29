@@ -6,7 +6,9 @@ import java.awt.event.MouseEvent;
 
 public class SimpleButton extends JButton {
 
-    public SimpleButton(String text) {
+	private static final long serialVersionUID = 1L;
+
+	public SimpleButton(String text) {
         super(text);
         init();
     }

@@ -6,7 +6,9 @@ import java.awt.event.MouseEvent;
 
 public class ComboBox<E> extends JComboBox<E> {
 
-    public ComboBox(E[] items) {
+	private static final long serialVersionUID = 1L;
+
+	public ComboBox(E[] items) {
         super(items);
         init();
     }
